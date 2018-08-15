@@ -1,0 +1,1784 @@
+Making data...
+##############  Test 0  ###############
+Order by : 2,1,3
+Filter by : 
+
+***********************************
+Index Type : OrderHHJ
+Clear Cache...
+Fetching traces...
+Begin to build ORDER index of key : 
+2,1,3
+Total trace num is : 50000000
+Begin to read data...
+Read over, read time is : 23.935734 s, begin to sort...
+Sort over, sort time is : 27.210056 s, begin to write out...
+Write out over, write time is : 11.152709 s
+Build ORDER index over, Time Elapsed is : 62.310043 s
+Clear Cache...
+fetch time = 14.032466, total_time = 82.974113
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 50000000
+Total Trace Number : 50000000
+Fetch ratio : 100.00%
+Time : 14.03247 (83.12204) s
+Call read trace id num : 0
+Read trace id time : 0.000000 s
+Total read trace id num : 0
+Total read trace id size : 0.00000 MB
+Total read trace speed : -nan MB/s
+Call load block num : 0
+Load block time : 0.000000 s
+Total load block size : 0.00000 MB
+Valid load block size : 0.00000 MB
+Valid load ratio : -nan%
+Total load block speed : -nan MB/s
+
+***********************************
+Index Type : BTree
+Clear Cache...
+Fetching traces...
+Filter is empty, load all index directly...
+Begin to build BTREE index of key : 
+2,1,3
+Begin to read data...
+Read over, read time is : 23.896603 s, begin to sort...
+Sort over, sort time is : 26.523659 s, begin to write out...
+Write out over, write time is : 24.702276 s
+Build BTREE index over, Time Elapsed is : 75.180351 s
+Clear Cache...
+Read index as order time : 10.464423 s
+fetch time = 11.283426, total_time = 103.056400
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 50000000
+Total Trace Number : 50000000
+Fetch ratio : 100.00%
+Time : 11.28343 (103.28656) s
+Call read trace id num : 0
+Read trace id time : 5.843152 s
+Total read trace id num : 50000000
+Total read trace id size : 381.46973 MB
+Total read trace speed : 65.28493 MB/s
+Call load block num : 0
+Load block time : 0.000000 s
+Total load block size : 0.00000 MB
+Valid load block size : 0.00000 MB
+Valid load ratio : -nan%
+Total load block speed : -nan MB/s
+
+***********************************
+Index Type : BTreeSort
+Clear Cache...
+Fetching traces...
+Filter is empty, load all index directly...
+Read index as order time : 4.986283 s
+fetch time = 5.165555, total_time = 5.165555
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 50000000
+Total Trace Number : 50000000
+Fetch ratio : 100.00%
+Time : 5.16556 (5.59239) s
+Call read trace id num : 0
+Read trace id time : 4.115076 s
+Total read trace id num : 50000000
+Total read trace id size : 381.46973 MB
+Total read trace speed : 92.70053 MB/s
+Call load block num : 0
+Load block time : 0.000000 s
+Total load block size : 0.00000 MB
+Valid load block size : 0.00000 MB
+Valid load ratio : -nan%
+Total load block speed : -nan MB/s
+
+***********************************
+Index Type : BTreeNoSort
+Clear Cache...
+Fetching traces...
+Filter is empty, load all index directly...
+Read index as order time : 5.015475 s
+fetch time = 5.015624, total_time = 5.015624
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 50000000
+Total Trace Number : 50000000
+Fetch ratio : 100.00%
+Time : 5.01562 (5.24589) s
+Call read trace id num : 0
+Read trace id time : 4.169278 s
+Total read trace id num : 50000000
+Total read trace id size : 381.46973 MB
+Total read trace speed : 91.49539 MB/s
+Call load block num : 0
+Load block time : 0.000000 s
+Total load block size : 0.00000 MB
+Valid load block size : 0.00000 MB
+Valid load ratio : -nan%
+Total load block speed : -nan MB/s
+##############  Test 1  ###############
+Order by : 1
+Filter by : 
+key_id : 0, | 4774 ~ 6673 | | 178 ~ 1593 | | 2790 ~ 4205 | | 3879 ~ 5294 | | 23 ~ 822 | | 2773 ~ 3572 | | 615 ~ 1414 | | 969 ~ 1768 | | 35 ~ 834 | 
+key_id : 1, | 889 ~ 1053 | | 539 ~ 703 | 
+
+***********************************
+Index Type : OrderHHJ
+Clear Cache...
+Fetching traces...
+key id = 0, After Normalize : 
+| start : 23, end : 1768 | | start : 2773, end : 6673 | 
+key id = 1, After Normalize : 
+| start : 539, end : 703 | | start : 889, end : 1053 | 
+fetch time = 788.439197, total_time = 788.439197
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 10948843
+Total Trace Number : 50000000
+Fetch ratio : 21.90%
+Time : 788.43920 (788.46563) s
+Call read trace id num : 0
+Read trace id time : 4.169278 s
+Total read trace id num : 50000000
+Total read trace id size : 381.46973 MB
+Total read trace speed : 91.49539 MB/s
+Call load block num : 0
+Load block time : 0.000000 s
+Total load block size : 0.00000 MB
+Valid load block size : 0.00000 MB
+Valid load ratio : -nan%
+Total load block speed : -nan MB/s
+
+***********************************
+Index Type : BTree
+Clear Cache...
+Fetching traces...
+key id = 0, After Normalize : 
+| start : 23, end : 1768 | | start : 2773, end : 6673 | 
+key id = 1, After Normalize : 
+| start : 539, end : 703 | | start : 889, end : 1053 | 
+Search for index : 0, 1, 
+Permutation : 0, 1, 
+Permutation : 1, 0, 
+after sort : 
+0, 1, 
+Begin to build BTREE index of key : 
+0,1
+Begin to read data...
+Read over, read time is : 96.981392 s, begin to sort...
+Sort over, sort time is : 53.140022 s, begin to write out...
+Write out over, write time is : 22.122395 s
+Build BTREE index over, Time Elapsed is : 172.308685 s
+Clear Cache...
+Search time : 4.719945 s
+Keys in filter is not contained in order, use index of filter to fetch trace first
+then record these in a bitmap, and get trace id as the order...
+Read index as order time : 4.397394 s
+fetch time = 9.463627, total_time = 192.061354
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 10948843
+Total Trace Number : 50000000
+Fetch ratio : 21.90%
+Time : 9.46363 (192.11218) s
+Call read trace id num : 2214
+Read trace id time : 6.987074 s
+Total read trace id num : 60969400
+Total read trace id size : 465.15961 MB
+Total read trace speed : 66.57430 MB/s
+Call load block num : 7337
+Load block time : 0.031808 s
+Total load block size : 0.44149 MB
+Valid load block size : 0.44149 MB
+Valid load ratio : 100.00000%
+Total load block speed : 13.87984 MB/s
+
+***********************************
+Index Type : BTreeSort
+Clear Cache...
+Fetching traces...
+key id = 0, After Normalize : 
+| start : 23, end : 1768 | | start : 2773, end : 6673 | 
+key id = 1, After Normalize : 
+| start : 539, end : 703 | | start : 889, end : 1053 | 
+after Add : 
+1, 0, 
+Search for index : 1, 0, 
+Permutation : 1, 0, 
+Begin to build BTREE index of key : 
+1,0
+Begin to read data...
+Read over, read time is : 39.514442 s, begin to sort...
+Sort over, sort time is : 50.271599 s, begin to write out...
+Write out over, write time is : 32.736725 s
+Build BTREE index over, Time Elapsed is : 123.004036 s
+Clear Cache...
+Search time : 7.106628 s
+fetch time = 8.081172, total_time = 135.916965
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 10948843
+Total Trace Number : 50000000
+Fetch ratio : 21.90%
+Time : 8.08117 (138.07354) s
+Call read trace id num : 551
+Read trace id time : 2.142379 s
+Total read trace id num : 10956344
+Total read trace id size : 83.59027 MB
+Total read trace speed : 39.01751 MB/s
+Call load block num : 562
+Load block time : 0.053069 s
+Total load block size : 0.09426 MB
+Valid load block size : 0.09426 MB
+Valid load ratio : 100.00000%
+Total load block speed : 1.77621 MB/s
+
+***********************************
+Index Type : BTreeNoSort
+Clear Cache...
+Fetching traces...
+key id = 1, After Normalize : 
+| start : 539, end : 703 | | start : 889, end : 1053 | 
+key id = 0, After Normalize : 
+| start : 23, end : 1768 | | start : 2773, end : 6673 | 
+after sort : 
+1, 0, 
+Search time : 1.868040 s
+fetch time = 2.124983, total_time = 2.124983
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 10948843
+Total Trace Number : 50000000
+Fetch ratio : 21.90%
+Time : 2.12498 (2.17313) s
+Call read trace id num : 551
+Read trace id time : 1.643383 s
+Total read trace id num : 10956344
+Total read trace id size : 83.59027 MB
+Total read trace speed : 50.86477 MB/s
+Call load block num : 562
+Load block time : 0.081607 s
+Total load block size : 0.09426 MB
+Valid load block size : 0.09426 MB
+Valid load ratio : 100.00000%
+Total load block speed : 1.15507 MB/s
+##############  Test 2  ###############
+Order by : 1,3
+Filter by : 
+key_id : 1, | 801 ~ 1100 | | 90 ~ 389 | | 915 ~ 1214 | | 190 ~ 306 | | 565 ~ 681 | | 586 ~ 702 | | 965 ~ 1081 | 
+key_id : 0, | 959 ~ 2083 | | 4291 ~ 5415 | 
+
+***********************************
+Index Type : OrderHHJ
+Clear Cache...
+Fetching traces...
+key id = 1, After Normalize : 
+| start : 90, end : 389 | | start : 565, end : 702 | | start : 801, end : 1214 | 
+key id = 0, After Normalize : 
+| start : 959, end : 2083 | | start : 4291, end : 5415 | 
+Begin to build ORDER index of key : 
+1,3
+Total trace num is : 50000000
+Begin to read data...
+Read over, read time is : 68.369675 s, begin to sort...
+Sort over, sort time is : 53.266876 s, begin to write out...
+Write out over, write time is : 24.194990 s
+Build ORDER index over, Time Elapsed is : 146.002106 s
+Clear Cache...
+fetch time = 1963.161488, total_time = 2112.864496
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 11977569
+Total Trace Number : 50000000
+Fetch ratio : 23.96%
+Time : 1963.16149 (2112.93249) s
+Call read trace id num : 551
+Read trace id time : 1.643383 s
+Total read trace id num : 10956344
+Total read trace id size : 83.59027 MB
+Total read trace speed : 50.86477 MB/s
+Call load block num : 562
+Load block time : 0.081607 s
+Total load block size : 0.09426 MB
+Valid load block size : 0.09426 MB
+Valid load ratio : 100.00000%
+Total load block speed : 1.15507 MB/s
+
+***********************************
+Index Type : BTree
+Clear Cache...
+Fetching traces...
+key id = 1, After Normalize : 
+| start : 90, end : 389 | | start : 565, end : 702 | | start : 801, end : 1214 | 
+key id = 0, After Normalize : 
+| start : 959, end : 2083 | | start : 4291, end : 5415 | 
+Search for index : 1, 0, 
+Permutation : 1, 0, 
+Permutation : 0, 1, 
+Find Index : 1, 0, 
+after sort : 
+1, 0, 
+Search time : 3.270002 s
+Keys in filter is not contained in order, use index of filter to fetch trace first
+then record these in a bitmap, and get trace id as the order...
+Begin to build BTREE index of key : 
+1,3
+Begin to read data...
+Read over, read time is : 61.081440 s, begin to sort...
+Sort over, sort time is : 54.599434 s, begin to write out...
+Write out over, write time is : 27.318090 s
+Build BTREE index over, Time Elapsed is : 143.114182 s
+Clear Cache...
+Read index as order time : 7.646403 s
+fetch time = 11.935696, total_time = 159.103224
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 11977569
+Total Trace Number : 50000000
+Fetch ratio : 23.96%
+Time : 11.93570 (169.54656) s
+Call read trace id num : 1151
+Read trace id time : 6.566059 s
+Total read trace id num : 61994542
+Total read trace id size : 472.98083 MB
+Total read trace speed : 72.03420 MB/s
+Call load block num : 1294
+Load block time : 0.187560 s
+Total load block size : 0.21608 MB
+Valid load block size : 0.21608 MB
+Valid load ratio : 100.00000%
+Total load block speed : 1.15208 MB/s
+
+***********************************
+Index Type : BTreeSort
+Clear Cache...
+Fetching traces...
+key id = 1, After Normalize : 
+| start : 90, end : 389 | | start : 565, end : 702 | | start : 801, end : 1214 | 
+key id = 0, After Normalize : 
+| start : 959, end : 2083 | | start : 4291, end : 5415 | 
+after Add : 
+1, 0, 3, 
+Search for index : 1, 0, 3, 
+Permutation : 1, 0, 3, 
+Begin to build BTREE index of key : 
+1,0,3
+Begin to read data...
+Read over, read time is : 31.692120 s, begin to sort...
+Sort over, sort time is : 59.732628 s, begin to write out...
+Write out over, write time is : 28.730400 s
+Build BTREE index over, Time Elapsed is : 120.468132 s
+Clear Cache...
+Search time : 63.192693 s
+fetch time = 63.530332, total_time = 193.765126
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 11977569
+Total Trace Number : 50000000
+Fetch ratio : 23.96%
+Time : 63.53033 (193.87131) s
+Call read trace id num : 4003
+Read trace id time : 7.027196 s
+Total read trace id num : 11981058
+Total read trace id size : 91.40822 MB
+Total read trace speed : 13.00778 MB/s
+Call load block num : 38370
+Load block time : 3.493763 s
+Total load block size : 18.31960 MB
+Valid load block size : 16.92702 MB
+Valid load ratio : 92.39842%
+Total load block speed : 5.24352 MB/s
+
+***********************************
+Index Type : BTreeNoSort
+Clear Cache...
+Fetching traces...
+key id = 1, After Normalize : 
+| start : 90, end : 389 | | start : 565, end : 702 | | start : 801, end : 1214 | 
+key id = 0, After Normalize : 
+| start : 959, end : 2083 | | start : 4291, end : 5415 | 
+key id = 3, After Normalize : 
+
+after sort : 
+1, 3, 0, 
+Begin to build BTREE index of key : 
+1,3,0
+Begin to read data...
+Read over, read time is : 62.581013 s, begin to sort...
+Sort over, sort time is : 59.705536 s, begin to write out...
+Write out over, write time is : 34.362038 s
+Build BTREE index over, Time Elapsed is : 156.830231 s
+Clear Cache...
+Search time : 29.707890 s
+fetch time = 30.270165, total_time = 196.156056
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 11977569
+Total Trace Number : 50000000
+Fetch ratio : 23.96%
+Time : 30.27017 (196.21105) s
+Call read trace id num : 574640
+Read trace id time : 10.798142 s
+Total read trace id num : 27203549
+Total read trace id size : 207.54660 MB
+Total read trace speed : 19.22058 MB/s
+Call load block num : 637657
+Load block time : 2.088942 s
+Total load block size : 103.47975 MB
+Valid load block size : 103.47975 MB
+Valid load ratio : 100.00000%
+Total load block speed : 49.53693 MB/s
+##############  Test 3  ###############
+Order by : 2
+Filter by : 
+key_id : 3, | 246 ~ 307 | | 349 ~ 410 | | 467 ~ 528 | | 335 ~ 396 | | 344 ~ 405 | 
+
+***********************************
+Index Type : OrderHHJ
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 246, end : 307 | | start : 335, end : 410 | | start : 467, end : 528 | 
+fetch time = 186.160266, total_time = 186.160266
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 17100000
+Total Trace Number : 50000000
+Fetch ratio : 34.20%
+Time : 186.16027 (186.25878) s
+Call read trace id num : 574640
+Read trace id time : 10.798142 s
+Total read trace id num : 27203549
+Total read trace id size : 207.54660 MB
+Total read trace speed : 19.22058 MB/s
+Call load block num : 637657
+Load block time : 2.088942 s
+Total load block size : 103.47975 MB
+Valid load block size : 103.47975 MB
+Valid load ratio : 100.00000%
+Total load block speed : 49.53693 MB/s
+
+***********************************
+Index Type : BTree
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 246, end : 307 | | start : 335, end : 410 | | start : 467, end : 528 | 
+Search for index : 3, 
+Permutation : 3, 
+Find Index : 3, 0, 2, 
+after sort : 
+3, 
+Search time : 10.794928 s
+Keys in filter is not contained in order, use index of filter to fetch trace first
+then record these in a bitmap, and get trace id as the order...
+Read index as order time : 5.086858 s
+fetch time = 16.249633, total_time = 16.249633
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 17100000
+Total Trace Number : 50000000
+Fetch ratio : 34.20%
+Time : 16.24963 (16.87684) s
+Call read trace id num : 779250
+Read trace id time : 7.361613 s
+Total read trace id num : 67879247
+Total read trace id size : 517.87756 MB
+Total read trace speed : 70.34838 MB/s
+Call load block num : 779257
+Load block time : 7.261735 s
+Total load block size : 192.20480 MB
+Valid load block size : 192.20480 MB
+Valid load ratio : 100.00000%
+Total load block speed : 26.46816 MB/s
+
+***********************************
+Index Type : BTreeSort
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 246, end : 307 | | start : 335, end : 410 | | start : 467, end : 528 | 
+after Add : 
+3, 2, 
+Search for index : 3, 2, 
+Permutation : 3, 2, 
+Begin to build BTREE index of key : 
+3,2
+Begin to read data...
+Read over, read time is : 107.420067 s, begin to sort...
+Sort over, sort time is : 19.313305 s, begin to write out...
+Write out over, write time is : 6.459032 s
+Build BTREE index over, Time Elapsed is : 133.374420 s
+Clear Cache...
+Search time : 51.969033 s
+fetch time = 52.732036, total_time = 192.516097
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 17100000
+Total Trace Number : 50000000
+Fetch ratio : 34.20%
+Time : 52.73204 (192.69021) s
+Call read trace id num : 174
+Read trace id time : 1.825701 s
+Total read trace id num : 17100171
+Total read trace id size : 130.46396 MB
+Total read trace speed : 71.45966 MB/s
+Call load block num : 694
+Load block time : 0.052749 s
+Total load block size : 0.33887 MB
+Valid load block size : 0.25537 MB
+Valid load ratio : 75.36023%
+Total load block speed : 6.42410 MB/s
+
+***********************************
+Index Type : BTreeNoSort
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 246, end : 307 | | start : 335, end : 410 | | start : 467, end : 528 | 
+key id = 2, After Normalize : 
+
+after sort : 
+2, 3, 
+Begin to build BTREE index of key : 
+2,3
+Begin to read data...
+Read over, read time is : 59.597153 s, begin to sort...
+Sort over, sort time is : 0.562738 s, begin to write out...
+Write out over, write time is : 5.983468 s
+Build BTREE index over, Time Elapsed is : 66.499573 s
+Clear Cache...
+Search time : 6.604498 s
+fetch time = 7.118546, total_time = 78.646208
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 17100000
+Total Trace Number : 50000000
+Fetch ratio : 34.20%
+Time : 7.11855 (78.73648) s
+Call read trace id num : 301
+Read trace id time : 6.220716 s
+Total read trace id num : 17105100
+Total read trace id size : 130.50156 MB
+Total read trace speed : 20.97854 MB/s
+Call load block num : 1001
+Load block time : 0.151221 s
+Total load block size : 0.48877 MB
+Valid load block size : 0.48877 MB
+Valid load ratio : 100.00000%
+Total load block speed : 3.23216 MB/s
+##############  Test 4  ###############
+Order by : 1,3,0
+Filter by : 
+
+***********************************
+Index Type : OrderHHJ
+Clear Cache...
+Fetching traces...
+Begin to build ORDER index of key : 
+1,3,0
+Total trace num is : 50000000
+Begin to read data...
+Read over, read time is : 39.053558 s, begin to sort...
+Sort over, sort time is : 60.795483 s, begin to write out...
+Write out over, write time is : 26.234032 s
+Build ORDER index over, Time Elapsed is : 126.331184 s
+Clear Cache...
+fetch time = 9.609306, total_time = 138.652160
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 50000000
+Total Trace Number : 50000000
+Fetch ratio : 100.00%
+Time : 9.60931 (138.80509) s
+Call read trace id num : 301
+Read trace id time : 6.220716 s
+Total read trace id num : 17105100
+Total read trace id size : 130.50156 MB
+Total read trace speed : 20.97854 MB/s
+Call load block num : 1001
+Load block time : 0.151221 s
+Total load block size : 0.48877 MB
+Valid load block size : 0.48877 MB
+Valid load ratio : 100.00000%
+Total load block speed : 3.23216 MB/s
+
+***********************************
+Index Type : BTree
+Clear Cache...
+Fetching traces...
+Filter is empty, load all index directly...
+Read index as order time : 5.460509 s
+fetch time = 5.870231, total_time = 5.870231
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 50000000
+Total Trace Number : 50000000
+Fetch ratio : 100.00%
+Time : 5.87023 (6.17582) s
+Call read trace id num : 0
+Read trace id time : 4.883545 s
+Total read trace id num : 50000000
+Total read trace id size : 381.46973 MB
+Total read trace speed : 78.11328 MB/s
+Call load block num : 0
+Load block time : 0.000000 s
+Total load block size : 0.00000 MB
+Valid load block size : 0.00000 MB
+Valid load ratio : -nan%
+Total load block speed : -nan MB/s
+
+***********************************
+Index Type : BTreeSort
+Clear Cache...
+Fetching traces...
+Filter is empty, load all index directly...
+Read index as order time : 5.665927 s
+fetch time = 5.686992, total_time = 5.686992
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 50000000
+Total Trace Number : 50000000
+Fetch ratio : 100.00%
+Time : 5.68699 (6.06285) s
+Call read trace id num : 0
+Read trace id time : 5.075694 s
+Total read trace id num : 50000000
+Total read trace id size : 381.46973 MB
+Total read trace speed : 75.15617 MB/s
+Call load block num : 0
+Load block time : 0.000000 s
+Total load block size : 0.00000 MB
+Valid load block size : 0.00000 MB
+Valid load ratio : -nan%
+Total load block speed : -nan MB/s
+
+***********************************
+Index Type : BTreeNoSort
+Clear Cache...
+Fetching traces...
+Filter is empty, load all index directly...
+Read index as order time : 4.661805 s
+fetch time = 4.680229, total_time = 4.680229
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 50000000
+Total Trace Number : 50000000
+Fetch ratio : 100.00%
+Time : 4.68023 (5.20564) s
+Call read trace id num : 0
+Read trace id time : 4.075779 s
+Total read trace id num : 50000000
+Total read trace id size : 381.46973 MB
+Total read trace speed : 93.59430 MB/s
+Call load block num : 0
+Load block time : 0.000000 s
+Total load block size : 0.00000 MB
+Valid load block size : 0.00000 MB
+Valid load ratio : -nan%
+Total load block speed : -nan MB/s
+##############  Test 5  ###############
+Order by : 0
+Filter by : 
+key_id : 3, | 95 ~ 524 | 
+
+***********************************
+Index Type : OrderHHJ
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 95, end : 524 | 
+fetch time = 1282.577528, total_time = 1282.577528
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 40500000
+Total Trace Number : 50000000
+Fetch ratio : 81.00%
+Time : 1282.57753 (1282.84961) s
+Call read trace id num : 0
+Read trace id time : 4.075779 s
+Total read trace id num : 50000000
+Total read trace id size : 381.46973 MB
+Total read trace speed : 93.59430 MB/s
+Call load block num : 0
+Load block time : 0.000000 s
+Total load block size : 0.00000 MB
+Valid load block size : 0.00000 MB
+Valid load ratio : -nan%
+Total load block speed : -nan MB/s
+
+***********************************
+Index Type : BTree
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 95, end : 524 | 
+Search for index : 3, 
+Permutation : 3, 
+Find Index : 3, 2, 
+after sort : 
+3, 
+Search time : 4.319348 s
+Keys in filter is not contained in order, use index of filter to fetch trace first
+then record these in a bitmap, and get trace id as the order...
+Read index as order time : 4.668803 s
+fetch time = 9.361214, total_time = 9.361214
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 40500000
+Total Trace Number : 50000000
+Fetch ratio : 81.00%
+Time : 9.36121 (9.66509) s
+Call read trace id num : 406
+Read trace id time : 6.815778 s
+Total read trace id num : 90500405
+Total read trace id size : 690.46332 MB
+Total read trace speed : 101.30367 MB/s
+Call load block num : 416
+Load block time : 0.017853 s
+Total load block size : 0.20312 MB
+Valid load block size : 0.20312 MB
+Valid load ratio : 100.00000%
+Total load block speed : 11.37770 MB/s
+
+***********************************
+Index Type : BTreeSort
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 95, end : 524 | 
+after Add : 
+3, 0, 
+Search for index : 3, 0, 
+Permutation : 3, 0, 
+Find Index : 3, 0, 2, 
+Search time : 162.240011 s
+fetch time = 162.692708, total_time = 162.692708
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 40500000
+Total Trace Number : 50000000
+Fetch ratio : 81.00%
+Time : 162.69271 (163.08910) s
+Call read trace id num : 1845586
+Read trace id time : 3.469487 s
+Total read trace id num : 42345585
+Total read trace id size : 323.07117 MB
+Total read trace speed : 93.11784 MB/s
+Call load block num : 2155020
+Load block time : 8.520061 s
+Total load block size : 606.16447 MB
+Valid load block size : 534.67668 MB
+Valid load ratio : 88.20654%
+Total load block speed : 71.14556 MB/s
+
+***********************************
+Index Type : BTreeNoSort
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 95, end : 524 | 
+key id = 0, After Normalize : 
+
+after sort : 
+0, 3, 
+Begin to build BTREE index of key : 
+0,3
+Begin to read data...
+Read over, read time is : 72.198288 s, begin to sort...
+Sort over, sort time is : 57.907944 s, begin to write out...
+Write out over, write time is : 37.385895 s
+Build BTREE index over, Time Elapsed is : 167.799332 s
+Clear Cache...
+Search time : 4.708536 s
+fetch time = 4.812444, total_time = 172.697069
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 40500000
+Total Trace Number : 50000000
+Fetch ratio : 81.00%
+Time : 4.81244 (172.93306) s
+Call read trace id num : 4557
+Read trace id time : 3.123039 s
+Total read trace id num : 40504556
+Total read trace id size : 309.02524 MB
+Total read trace speed : 98.95017 MB/s
+Call load block num : 50117
+Load block time : 1.111003 s
+Total load block size : 24.47119 MB
+Valid load block size : 24.47119 MB
+Valid load ratio : 100.00000%
+Total load block speed : 22.02621 MB/s
+##############  Test 6  ###############
+Order by : 3
+Filter by : 
+key_id : 3, | 320 ~ 367 | | 220 ~ 267 | | 275 ~ 322 | | 96 ~ 143 | 
+
+***********************************
+Index Type : OrderHHJ
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 96, end : 143 | | start : 220, end : 267 | | start : 275, end : 367 | 
+Begin to build ORDER index of key : 
+3
+Total trace num is : 50000000
+Begin to read data...
+Read over, read time is : 27.395914 s, begin to sort...
+Sort over, sort time is : 13.626945 s, begin to write out...
+Write out over, write time is : 8.738003 s
+Build ORDER index over, Time Elapsed is : 49.823368 s
+Clear Cache...
+after sort : 
+3, 
+fetch time = 5.745786, total_time = 55.590063
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 18900000
+Total Trace Number : 50000000
+Fetch ratio : 37.80%
+Time : 5.74579 (55.63987) s
+Call read trace id num : 4557
+Read trace id time : 3.123039 s
+Total read trace id num : 40504556
+Total read trace id size : 309.02524 MB
+Total read trace speed : 98.95017 MB/s
+Call load block num : 50117
+Load block time : 1.111003 s
+Total load block size : 24.47119 MB
+Valid load block size : 24.47119 MB
+Valid load ratio : 100.00000%
+Total load block speed : 22.02621 MB/s
+
+***********************************
+Index Type : BTree
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 96, end : 143 | | start : 220, end : 267 | | start : 275, end : 367 | 
+Keys in filter is contained in order, use the index of order to fetch trace ...
+after sort : 
+3, 
+Search time : 1.935810 s
+fetch time = 1.991912, total_time = 1.991912
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 18900000
+Total Trace Number : 50000000
+Fetch ratio : 37.80%
+Time : 1.99191 (2.09087) s
+Call read trace id num : 192
+Read trace id time : 1.691406 s
+Total read trace id num : 18900189
+Total read trace id size : 144.19699 MB
+Total read trace speed : 85.25275 MB/s
+Call load block num : 199
+Load block time : 0.025893 s
+Total load block size : 0.09717 MB
+Valid load block size : 0.09717 MB
+Valid load ratio : 100.00000%
+Total load block speed : 3.75268 MB/s
+
+***********************************
+Index Type : BTreeSort
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 96, end : 143 | | start : 220, end : 267 | | start : 275, end : 367 | 
+after Add : 
+3, 
+Search for index : 3, 
+Permutation : 3, 
+Find Index : 3, 2, 
+Search time : 2.488325 s
+fetch time = 2.490968, total_time = 2.490968
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 18900000
+Total Trace Number : 50000000
+Fetch ratio : 37.80%
+Time : 2.49097 (2.61287) s
+Call read trace id num : 192
+Read trace id time : 0.206266 s
+Total read trace id num : 18900189
+Total read trace id size : 144.19699 MB
+Total read trace speed : 699.08289 MB/s
+Call load block num : 766
+Load block time : 0.001688 s
+Total load block size : 0.37402 MB
+Valid load block size : 0.28174 MB
+Valid load ratio : 75.32637%
+Total load block speed : 221.57726 MB/s
+
+***********************************
+Index Type : BTreeNoSort
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 96, end : 143 | | start : 220, end : 267 | | start : 275, end : 367 | 
+after sort : 
+3, 
+Search time : 0.549609 s
+fetch time = 0.550252, total_time = 0.550252
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 18900000
+Total Trace Number : 50000000
+Fetch ratio : 37.80%
+Time : 0.55025 (0.65142) s
+Call read trace id num : 192
+Read trace id time : 0.319709 s
+Total read trace id num : 18900189
+Total read trace id size : 144.19699 MB
+Total read trace speed : 451.02567 MB/s
+Call load block num : 199
+Load block time : 0.015907 s
+Total load block size : 0.09717 MB
+Valid load block size : 0.09717 MB
+Valid load ratio : 100.00000%
+Total load block speed : 6.10851 MB/s
+##############  Test 7  ###############
+Order by : 0
+Filter by : 
+key_id : 2, | 58 ~ 70 | | 32 ~ 44 | | 32 ~ 44 | 
+key_id : 3, | 497 ~ 653 | | 47 ~ 203 | 
+
+***********************************
+Index Type : OrderHHJ
+Clear Cache...
+Fetching traces...
+key id = 2, After Normalize : 
+| start : 32, end : 44 | | start : 58, end : 70 | 
+key id = 3, After Normalize : 
+| start : 47, end : 203 | | start : 497, end : 653 | 
+fetch time = 1305.211376, total_time = 1305.211376
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 4160000
+Total Trace Number : 50000000
+Fetch ratio : 8.32%
+Time : 1305.21138 (1305.35668) s
+Call read trace id num : 192
+Read trace id time : 0.319709 s
+Total read trace id num : 18900189
+Total read trace id size : 144.19699 MB
+Total read trace speed : 451.02567 MB/s
+Call load block num : 199
+Load block time : 0.015907 s
+Total load block size : 0.09717 MB
+Valid load block size : 0.09717 MB
+Valid load ratio : 100.00000%
+Total load block speed : 6.10851 MB/s
+
+***********************************
+Index Type : BTree
+Clear Cache...
+Fetching traces...
+key id = 2, After Normalize : 
+| start : 32, end : 44 | | start : 58, end : 70 | 
+key id = 3, After Normalize : 
+| start : 47, end : 203 | | start : 497, end : 653 | 
+Search for index : 2, 3, 
+Permutation : 2, 3, 
+Permutation : 3, 2, 
+Find Index : 2, 3, 
+after sort : 
+2, 3, 
+Search time : 1.278539 s
+Keys in filter is not contained in order, use index of filter to fetch trace first
+then record these in a bitmap, and get trace id as the order...
+Read index as order time : 4.224381 s
+fetch time = 5.624961, total_time = 5.624961
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 4160000
+Total Trace Number : 50000000
+Fetch ratio : 8.32%
+Time : 5.62496 (5.66461) s
+Call read trace id num : 54
+Read trace id time : 3.954838 s
+Total read trace id num : 54160676
+Total read trace id size : 413.21317 MB
+Total read trace speed : 104.48296 MB/s
+Call load block num : 187
+Load block time : 0.122506 s
+Total load block size : 0.09131 MB
+Valid load block size : 0.09131 MB
+Valid load ratio : 100.00000%
+Total load block speed : 0.74534 MB/s
+
+***********************************
+Index Type : BTreeSort
+Clear Cache...
+Fetching traces...
+key id = 2, After Normalize : 
+| start : 32, end : 44 | | start : 58, end : 70 | 
+key id = 3, After Normalize : 
+| start : 47, end : 203 | | start : 497, end : 653 | 
+after Add : 
+2, 3, 0, 
+Search for index : 2, 3, 0, 
+Permutation : 2, 3, 0, 
+Begin to build BTREE index of key : 
+2,3,0
+Begin to read data...
+Read over, read time is : 36.902184 s, begin to sort...
+Sort over, sort time is : 23.916576 s, begin to write out...
+Write out over, write time is : 30.478067 s
+Build BTREE index over, Time Elapsed is : 91.427490 s
+Clear Cache...
+Search time : 3.644994 s
+fetch time = 3.650537, total_time = 95.649655
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 4160000
+Total Trace Number : 50000000
+Fetch ratio : 8.32%
+Time : 3.65054 (95.69128) s
+Call read trace id num : 4214
+Read trace id time : 0.922603 s
+Total read trace id num : 4164186
+Total read trace id size : 31.77022 MB
+Total read trace speed : 34.43540 MB/s
+Call load block num : 95867
+Load block time : 1.783011 s
+Total load block size : 46.81006 MB
+Valid load block size : 44.77881 MB
+Valid load ratio : 95.66065%
+Total load block speed : 26.25337 MB/s
+
+***********************************
+Index Type : BTreeNoSort
+Clear Cache...
+Fetching traces...
+key id = 2, After Normalize : 
+| start : 32, end : 44 | | start : 58, end : 70 | 
+key id = 3, After Normalize : 
+| start : 47, end : 203 | | start : 497, end : 653 | 
+key id = 0, After Normalize : 
+
+after sort : 
+0, 2, 3, 
+Begin to build BTREE index of key : 
+0,2,3
+Begin to read data...
+Read over, read time is : 28.797501 s, begin to sort...
+Sort over, sort time is : 59.847122 s, begin to write out...
+Write out over, write time is : 55.442066 s
+Build BTREE index over, Time Elapsed is : 144.250076 s
+Clear Cache...
+Search time : 24.001156 s
+fetch time = 24.038524, total_time = 169.549300
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 4160000
+Total Trace Number : 50000000
+Fetch ratio : 8.32%
+Time : 24.03852 (169.57212) s
+Call read trace id num : 51219
+Read trace id time : 9.375923 s
+Total read trace id num : 4324855
+Total read trace id size : 32.99603 MB
+Total read trace speed : 3.51923 MB/s
+Call load block num : 181712
+Load block time : 14.486950 s
+Total load block size : 86.13311 MB
+Valid load block size : 86.13311 MB
+Valid load ratio : 100.00000%
+Total load block speed : 5.94557 MB/s
+##############  Test 8  ###############
+Order by : 0,2
+Filter by : 
+
+***********************************
+Index Type : OrderHHJ
+Clear Cache...
+Fetching traces...
+Begin to build ORDER index of key : 
+0,2
+Total trace num is : 50000000
+Begin to read data...
+Read over, read time is : 25.639927 s, begin to sort...
+Sort over, sort time is : 54.904152 s, begin to write out...
+Write out over, write time is : 23.185991 s
+Build ORDER index over, Time Elapsed is : 103.753609 s
+Clear Cache...
+fetch time = 10.401126, total_time = 114.207711
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 50000000
+Total Trace Number : 50000000
+Fetch ratio : 100.00%
+Time : 10.40113 (114.35000) s
+Call read trace id num : 51219
+Read trace id time : 9.375923 s
+Total read trace id num : 4324855
+Total read trace id size : 32.99603 MB
+Total read trace speed : 3.51923 MB/s
+Call load block num : 181712
+Load block time : 14.486950 s
+Total load block size : 86.13311 MB
+Valid load block size : 86.13311 MB
+Valid load ratio : 100.00000%
+Total load block speed : 5.94557 MB/s
+
+***********************************
+Index Type : BTree
+Clear Cache...
+Fetching traces...
+Filter is empty, load all index directly...
+Read index as order time : 5.809565 s
+fetch time = 5.828846, total_time = 5.828846
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 50000000
+Total Trace Number : 50000000
+Fetch ratio : 100.00%
+Time : 5.82885 (6.58002) s
+Call read trace id num : 0
+Read trace id time : 5.219923 s
+Total read trace id num : 50000000
+Total read trace id size : 381.46973 MB
+Total read trace speed : 73.07957 MB/s
+Call load block num : 0
+Load block time : 0.000000 s
+Total load block size : 0.00000 MB
+Valid load block size : 0.00000 MB
+Valid load ratio : -nan%
+Total load block speed : -nan MB/s
+
+***********************************
+Index Type : BTreeSort
+Clear Cache...
+Fetching traces...
+Filter is empty, load all index directly...
+Read index as order time : 1.632731 s
+fetch time = 1.632926, total_time = 1.632926
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 50000000
+Total Trace Number : 50000000
+Fetch ratio : 100.00%
+Time : 1.63293 (2.10673) s
+Call read trace id num : 0
+Read trace id time : 1.059304 s
+Total read trace id num : 50000000
+Total read trace id size : 381.46973 MB
+Total read trace speed : 360.11359 MB/s
+Call load block num : 0
+Load block time : 0.000000 s
+Total load block size : 0.00000 MB
+Valid load block size : 0.00000 MB
+Valid load ratio : -nan%
+Total load block speed : -nan MB/s
+
+***********************************
+Index Type : BTreeNoSort
+Clear Cache...
+Fetching traces...
+Filter is empty, load all index directly...
+Read index as order time : 1.057443 s
+fetch time = 1.057655, total_time = 1.057655
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 50000000
+Total Trace Number : 50000000
+Fetch ratio : 100.00%
+Time : 1.05766 (1.43973) s
+Call read trace id num : 0
+Read trace id time : 0.511652 s
+Total read trace id num : 50000000
+Total read trace id size : 381.46973 MB
+Total read trace speed : 745.56519 MB/s
+Call load block num : 0
+Load block time : 0.000000 s
+Total load block size : 0.00000 MB
+Valid load block size : 0.00000 MB
+Valid load ratio : -nan%
+Total load block speed : -nan MB/s
+##############  Test 9  ###############
+Order by : 1,3,0
+Filter by : 
+
+***********************************
+Index Type : OrderHHJ
+Clear Cache...
+Fetching traces...
+fetch time = 9.409446, total_time = 9.409446
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 50000000
+Total Trace Number : 50000000
+Fetch ratio : 100.00%
+Time : 9.40945 (9.90438) s
+Call read trace id num : 0
+Read trace id time : 0.511652 s
+Total read trace id num : 50000000
+Total read trace id size : 381.46973 MB
+Total read trace speed : 745.56519 MB/s
+Call load block num : 0
+Load block time : 0.000000 s
+Total load block size : 0.00000 MB
+Valid load block size : 0.00000 MB
+Valid load ratio : -nan%
+Total load block speed : -nan MB/s
+
+***********************************
+Index Type : BTree
+Clear Cache...
+Fetching traces...
+Filter is empty, load all index directly...
+Read index as order time : 4.559649 s
+fetch time = 4.653866, total_time = 4.653866
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 50000000
+Total Trace Number : 50000000
+Fetch ratio : 100.00%
+Time : 4.65387 (5.61278) s
+Call read trace id num : 0
+Read trace id time : 3.992106 s
+Total read trace id num : 50000000
+Total read trace id size : 381.46973 MB
+Total read trace speed : 95.55600 MB/s
+Call load block num : 0
+Load block time : 0.000000 s
+Total load block size : 0.00000 MB
+Valid load block size : 0.00000 MB
+Valid load ratio : -nan%
+Total load block speed : -nan MB/s
+
+***********************************
+Index Type : BTreeSort
+Clear Cache...
+Fetching traces...
+Filter is empty, load all index directly...
+Read index as order time : 1.518419 s
+fetch time = 1.518619, total_time = 1.518619
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 50000000
+Total Trace Number : 50000000
+Fetch ratio : 100.00%
+Time : 1.51862 (2.01143) s
+Call read trace id num : 0
+Read trace id time : 0.937060 s
+Total read trace id num : 50000000
+Total read trace id size : 381.46973 MB
+Total read trace speed : 407.09198 MB/s
+Call load block num : 0
+Load block time : 0.000000 s
+Total load block size : 0.00000 MB
+Valid load block size : 0.00000 MB
+Valid load ratio : -nan%
+Total load block speed : -nan MB/s
+
+***********************************
+Index Type : BTreeNoSort
+Clear Cache...
+Fetching traces...
+Filter is empty, load all index directly...
+Read index as order time : 1.057765 s
+fetch time = 1.057915, total_time = 1.057915
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 50000000
+Total Trace Number : 50000000
+Fetch ratio : 100.00%
+Time : 1.05791 (1.37366) s
+Call read trace id num : 0
+Read trace id time : 0.498129 s
+Total read trace id num : 50000000
+Total read trace id size : 381.46973 MB
+Total read trace speed : 765.80457 MB/s
+Call load block num : 0
+Load block time : 0.000000 s
+Total load block size : 0.00000 MB
+Valid load block size : 0.00000 MB
+Valid load ratio : -nan%
+Total load block speed : -nan MB/s
+##############  Test 10  ###############
+Order by : 3
+Filter by : 
+
+***********************************
+Index Type : OrderHHJ
+Clear Cache...
+Fetching traces...
+fetch time = 4.752169, total_time = 4.752169
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 50000000
+Total Trace Number : 50000000
+Fetch ratio : 100.00%
+Time : 4.75217 (4.98711) s
+Call read trace id num : 0
+Read trace id time : 0.498129 s
+Total read trace id num : 50000000
+Total read trace id size : 381.46973 MB
+Total read trace speed : 765.80457 MB/s
+Call load block num : 0
+Load block time : 0.000000 s
+Total load block size : 0.00000 MB
+Valid load block size : 0.00000 MB
+Valid load ratio : -nan%
+Total load block speed : -nan MB/s
+
+***********************************
+Index Type : BTree
+Clear Cache...
+Fetching traces...
+Filter is empty, load all index directly...
+Read index as order time : 4.654483 s
+fetch time = 4.681932, total_time = 4.681932
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 50000000
+Total Trace Number : 50000000
+Fetch ratio : 100.00%
+Time : 4.68193 (5.45025) s
+Call read trace id num : 0
+Read trace id time : 4.073230 s
+Total read trace id num : 50000000
+Total read trace id size : 381.46973 MB
+Total read trace speed : 93.65288 MB/s
+Call load block num : 0
+Load block time : 0.000000 s
+Total load block size : 0.00000 MB
+Valid load block size : 0.00000 MB
+Valid load ratio : -nan%
+Total load block speed : -nan MB/s
+
+***********************************
+Index Type : BTreeSort
+Clear Cache...
+Fetching traces...
+Filter is empty, load all index directly...
+Read index as order time : 1.481485 s
+fetch time = 1.481685, total_time = 1.481685
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 50000000
+Total Trace Number : 50000000
+Fetch ratio : 100.00%
+Time : 1.48168 (2.01945) s
+Call read trace id num : 0
+Read trace id time : 0.936957 s
+Total read trace id num : 50000000
+Total read trace id size : 381.46973 MB
+Total read trace speed : 407.13675 MB/s
+Call load block num : 0
+Load block time : 0.000000 s
+Total load block size : 0.00000 MB
+Valid load block size : 0.00000 MB
+Valid load ratio : -nan%
+Total load block speed : -nan MB/s
+
+***********************************
+Index Type : BTreeNoSort
+Clear Cache...
+Fetching traces...
+Filter is empty, load all index directly...
+Read index as order time : 1.165076 s
+fetch time = 1.165286, total_time = 1.165286
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 50000000
+Total Trace Number : 50000000
+Fetch ratio : 100.00%
+Time : 1.16529 (1.54907) s
+Call read trace id num : 0
+Read trace id time : 0.606250 s
+Total read trace id num : 50000000
+Total read trace id size : 381.46973 MB
+Total read trace speed : 629.22888 MB/s
+Call load block num : 0
+Load block time : 0.000000 s
+Total load block size : 0.00000 MB
+Valid load block size : 0.00000 MB
+Valid load ratio : -nan%
+Total load block speed : -nan MB/s
+##############  Test 11  ###############
+Order by : 1,2
+Filter by : 
+key_id : 3, | 393 ~ 587 | | 256 ~ 450 | 
+
+***********************************
+Index Type : OrderHHJ
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 256, end : 587 | 
+fetch time = 821.116771, total_time = 821.116771
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 24400000
+Total Trace Number : 50000000
+Fetch ratio : 48.80%
+Time : 821.11677 (821.69162) s
+Call read trace id num : 0
+Read trace id time : 0.606250 s
+Total read trace id num : 50000000
+Total read trace id size : 381.46973 MB
+Total read trace speed : 629.22888 MB/s
+Call load block num : 0
+Load block time : 0.000000 s
+Total load block size : 0.00000 MB
+Valid load block size : 0.00000 MB
+Valid load ratio : -nan%
+Total load block speed : -nan MB/s
+
+***********************************
+Index Type : BTree
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 256, end : 587 | 
+Search for index : 3, 
+Permutation : 3, 
+Find Index : 3, 2, 
+after sort : 
+3, 
+Search time : 2.716777 s
+Keys in filter is not contained in order, use index of filter to fetch trace first
+then record these in a bitmap, and get trace id as the order...
+Read index as order time : 8.105753 s
+fetch time = 10.950239, total_time = 10.950239
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 24400000
+Total Trace Number : 50000000
+Fetch ratio : 48.80%
+Time : 10.95024 (11.74517) s
+Call read trace id num : 245
+Read trace id time : 8.520843 s
+Total read trace id num : 74400244
+Total read trace id size : 567.62878 MB
+Total read trace speed : 66.61651 MB/s
+Call load block num : 251
+Load block time : 0.018637 s
+Total load block size : 0.12256 MB
+Valid load block size : 0.12256 MB
+Valid load ratio : 100.00000%
+Total load block speed : 6.57612 MB/s
+
+***********************************
+Index Type : BTreeSort
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 256, end : 587 | 
+after Add : 
+3, 1, 2, 
+Search for index : 3, 1, 2, 
+Permutation : 3, 1, 2, 
+Permutation : 3, 2, 1, 
+Begin to build BTREE index of key : 
+3,1,2
+Begin to read data...
+Read over, read time is : 29.613914 s, begin to sort...
+Sort over, sort time is : 25.153065 s, begin to write out...
+Write out over, write time is : 40.881390 s
+Build BTREE index over, Time Elapsed is : 95.844246 s
+Clear Cache...
+Search time : 28.091520 s
+fetch time = 28.188819, total_time = 125.038043
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 24400000
+Total Trace Number : 50000000
+Fetch ratio : 48.80%
+Time : 28.18882 (125.23863) s
+Call read trace id num : 244245
+Read trace id time : 5.121880 s
+Total read trace id num : 24644244
+Total read trace id size : 188.02066 MB
+Total read trace speed : 36.70931 MB/s
+Call load block num : 982107
+Load block time : 17.215826 s
+Total load block size : 479.54443 MB
+Valid load block size : 360.28467 MB
+Valid load ratio : 75.13061%
+Total load block speed : 27.85486 MB/s
+
+***********************************
+Index Type : BTreeNoSort
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 256, end : 587 | 
+key id = 1, After Normalize : 
+
+key id = 2, After Normalize : 
+
+after sort : 
+1, 2, 3, 
+Begin to build BTREE index of key : 
+1,2,3
+Begin to read data...
+Read over, read time is : 31.769220 s, begin to sort...
+Sort over, sort time is : 292.331909 s, begin to write out...
+Write out over, write time is : 72.737572 s
+Build BTREE index over, Time Elapsed is : 397.293488 s
+Clear Cache...
+Search time : 42.913757 s
+fetch time = 43.030765, total_time = 445.177472
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 24400000
+Total Trace Number : 50000000
+Fetch ratio : 48.80%
+Time : 43.03077 (445.41316) s
+Call read trace id num : 101001
+Read trace id time : 13.103415 s
+Total read trace id num : 24501000
+Total read trace id size : 186.92780 MB
+Total read trace speed : 14.26558 MB/s
+Call load block num : 701001
+Load block time : 29.153776 s
+Total load block size : 342.28564 MB
+Valid load block size : 342.28564 MB
+Valid load ratio : 100.00000%
+Total load block speed : 11.74070 MB/s
+##############  Test 12  ###############
+Order by : 3,2,1
+Filter by : 
+key_id : 1, | 150 ~ 469 | | 64 ~ 113 | | 910 ~ 959 | | 461 ~ 510 | | 881 ~ 930 | | 660 ~ 709 | 
+key_id : 3, | 166 ~ 245 | | 441 ~ 520 | | 85 ~ 164 | | 148 ~ 227 | 
+key_id : 2, | 66 ~ 89 | | 85 ~ 108 | | 15 ~ 38 | | 41 ~ 64 | 
+
+***********************************
+Index Type : OrderHHJ
+Clear Cache...
+Fetching traces...
+key id = 1, After Normalize : 
+| start : 64, end : 113 | | start : 150, end : 510 | | start : 660, end : 709 | | start : 881, end : 959 | 
+key id = 3, After Normalize : 
+| start : 85, end : 245 | | start : 441, end : 520 | 
+key id = 2, After Normalize : 
+| start : 15, end : 38 | | start : 41, end : 64 | | start : 66, end : 108 | 
+Begin to build ORDER index of key : 
+3,2,1
+Total trace num is : 50000000
+Begin to read data...
+Read over, read time is : 36.706398 s, begin to sort...
+Sort over, sort time is : 31.019928 s, begin to write out...
+Write out over, write time is : 20.170155 s
+Build ORDER index over, Time Elapsed is : 87.944847 s
+Clear Cache...
+after sort : 
+3, 2, 1, 
+fetch time = 6.401628, total_time = 94.476123
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 9741600
+Total Trace Number : 50000000
+Fetch ratio : 19.48%
+Time : 6.40163 (94.50414) s
+Call read trace id num : 101001
+Read trace id time : 13.103415 s
+Total read trace id num : 24501000
+Total read trace id size : 186.92780 MB
+Total read trace speed : 14.26558 MB/s
+Call load block num : 701001
+Load block time : 29.153776 s
+Total load block size : 342.28564 MB
+Valid load block size : 342.28564 MB
+Valid load ratio : 100.00000%
+Total load block speed : 11.74070 MB/s
+
+***********************************
+Index Type : BTree
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 85, end : 245 | | start : 441, end : 520 | 
+key id = 2, After Normalize : 
+| start : 15, end : 38 | | start : 41, end : 64 | | start : 66, end : 108 | 
+key id = 1, After Normalize : 
+| start : 64, end : 113 | | start : 150, end : 510 | | start : 660, end : 709 | | start : 881, end : 959 | 
+Keys in filter is contained in order, use the index of order to fetch trace ...
+Begin to build BTREE index of key : 
+3,2,1
+Begin to read data...
+Read over, read time is : 24.032734 s, begin to sort...
+Sort over, sort time is : 30.849354 s, begin to write out...
+Write out over, write time is : 26.728556 s
+Build BTREE index over, Time Elapsed is : 81.845665 s
+Clear Cache...
+after sort : 
+3, 2, 1, 
+Search time : 12.829974 s
+fetch time = 12.928955, total_time = 95.323012
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 9741600
+Total Trace Number : 50000000
+Fetch ratio : 19.48%
+Time : 12.92896 (95.37444) s
+Call read trace id num : 72822
+Read trace id time : 4.427779 s
+Total read trace id num : 9759860
+Total read trace id size : 74.46182 MB
+Total read trace speed : 16.81697 MB/s
+Call load block num : 380608
+Load block time : 8.134695 s
+Total load block size : 185.84375 MB
+Valid load block size : 185.84375 MB
+Valid load ratio : 100.00000%
+Total load block speed : 22.84582 MB/s
+
+***********************************
+Index Type : BTreeSort
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 85, end : 245 | | start : 441, end : 520 | 
+key id = 2, After Normalize : 
+| start : 15, end : 38 | | start : 41, end : 64 | | start : 66, end : 108 | 
+key id = 1, After Normalize : 
+| start : 64, end : 113 | | start : 150, end : 510 | | start : 660, end : 709 | | start : 881, end : 959 | 
+after Add : 
+2, 3, 1, 
+Search for index : 2, 3, 1, 
+Permutation : 2, 3, 1, 
+Begin to build BTREE index of key : 
+2,3,1
+Begin to read data...
+Read over, read time is : 24.362196 s, begin to sort...
+Sort over, sort time is : 0.724513 s, begin to write out...
+Write out over, write time is : 26.772261 s
+Build BTREE index over, Time Elapsed is : 52.262875 s
+Clear Cache...
+Search time : 15.900207 s
+fetch time = 15.978223, total_time = 68.661289
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 9741600
+Total Trace Number : 50000000
+Fetch ratio : 19.48%
+Time : 15.97822 (68.71355) s
+Call read trace id num : 72327
+Read trace id time : 4.698863 s
+Total read trace id num : 9759722
+Total read trace id size : 74.46077 MB
+Total read trace speed : 15.84655 MB/s
+Call load block num : 379504
+Load block time : 8.267023 s
+Total load block size : 185.30469 MB
+Valid load block size : 185.30469 MB
+Valid load ratio : 100.00000%
+Total load block speed : 22.41492 MB/s
+
+***********************************
+Index Type : BTreeNoSort
+Clear Cache...
+Fetching traces...
+key id = 2, After Normalize : 
+| start : 15, end : 38 | | start : 41, end : 64 | | start : 66, end : 108 | 
+key id = 3, After Normalize : 
+| start : 85, end : 245 | | start : 441, end : 520 | 
+key id = 1, After Normalize : 
+| start : 64, end : 113 | | start : 150, end : 510 | | start : 660, end : 709 | | start : 881, end : 959 | 
+after sort : 
+3, 2, 1, 
+Search time : 12.663745 s
+fetch time = 12.680840, total_time = 12.680840
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 9741600
+Total Trace Number : 50000000
+Fetch ratio : 19.48%
+Time : 12.68084 (12.73239) s
+Call read trace id num : 72822
+Read trace id time : 4.125433 s
+Total read trace id num : 9759860
+Total read trace id size : 74.46182 MB
+Total read trace speed : 18.04946 MB/s
+Call load block num : 380608
+Load block time : 8.304832 s
+Total load block size : 185.84375 MB
+Valid load block size : 185.84375 MB
+Valid load ratio : 100.00000%
+Total load block speed : 22.37778 MB/s
+##############  Test 13  ###############
+Order by : 3,2
+Filter by : 
+key_id : 3, | 455 ~ 641 | | 465 ~ 651 | 
+
+***********************************
+Index Type : OrderHHJ
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 455, end : 651 | 
+after sort : 
+3, 
+fetch time = 1.321239, total_time = 1.321239
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 4500000
+Total Trace Number : 50000000
+Fetch ratio : 9.00%
+Time : 1.32124 (1.33139) s
+Call read trace id num : 72822
+Read trace id time : 4.125433 s
+Total read trace id num : 9759860
+Total read trace id size : 74.46182 MB
+Total read trace speed : 18.04946 MB/s
+Call load block num : 380608
+Load block time : 8.304832 s
+Total load block size : 185.84375 MB
+Valid load block size : 185.84375 MB
+Valid load ratio : 100.00000%
+Total load block speed : 22.37778 MB/s
+
+***********************************
+Index Type : BTree
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 455, end : 651 | 
+Keys in filter is contained in order, use the index of order to fetch trace ...
+after sort : 
+3, 
+Search time : 0.475740 s
+fetch time = 0.494282, total_time = 0.494282
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 4500000
+Total Trace Number : 50000000
+Fetch ratio : 9.00%
+Time : 0.49428 (0.51663) s
+Call read trace id num : 46
+Read trace id time : 0.405359 s
+Total read trace id num : 4500045
+Total read trace id size : 34.33262 MB
+Total read trace speed : 84.69682 MB/s
+Call load block num : 48
+Load block time : 0.021433 s
+Total load block size : 0.02344 MB
+Valid load block size : 0.02344 MB
+Valid load ratio : 100.00000%
+Total load block speed : 1.09352 MB/s
+
+***********************************
+Index Type : BTreeSort
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 455, end : 651 | 
+after Add : 
+3, 2, 
+Search for index : 3, 2, 
+Permutation : 3, 2, 
+Find Index : 3, 2, 
+Search time : 0.489580 s
+fetch time = 0.490407, total_time = 0.490407
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 4500000
+Total Trace Number : 50000000
+Fetch ratio : 9.00%
+Time : 0.49041 (0.51485) s
+Call read trace id num : 46
+Read trace id time : 0.047677 s
+Total read trace id num : 4500045
+Total read trace id size : 34.33262 MB
+Total read trace speed : 720.10864 MB/s
+Call load block num : 183
+Load block time : 0.000411 s
+Total load block size : 0.08936 MB
+Valid load block size : 0.06738 MB
+Valid load ratio : 75.40984%
+Total load block speed : 217.40982 MB/s
+
+***********************************
+Index Type : BTreeNoSort
+Clear Cache...
+Fetching traces...
+key id = 3, After Normalize : 
+| start : 455, end : 651 | 
+key id = 2, After Normalize : 
+
+after sort : 
+3, 2, 
+Search time : 0.100855 s
+fetch time = 0.101286, total_time = 0.101286
+>>>>>>Fetching Over<<<<<
+Fetch Trace Number : 4500000
+Total Trace Number : 50000000
+Fetch ratio : 9.00%
+Time : 0.10129 (0.12719) s
+Call read trace id num : 46
+Read trace id time : 0.050282 s
+Total read trace id num : 4500045
+Total read trace id size : 34.33262 MB
+Total read trace speed : 682.80157 MB/s
+Call load block num : 48
+Load block time : 0.000148 s
+Total load block size : 0.02344 MB
+Valid load block size : 0.02344 MB
+Valid load ratio : 100.00000%
+Total load block speed : 158.36148 MB/s
+##############  Test 14  ###############
+Order by : 0,3,2
+Filter by : 
+key_id : 1, | 408 ~ 574 | | 214 ~ 380 | | 699 ~ 865 | | 836 ~ 1002 | 
+
+***********************************
+Index Type : OrderHHJ
+Clear Cache...
+Fetching traces...
+key id = 1, After Normalize : 
+| start : 214, end : 380 | | start : 408, end : 574 | | start : 699, end : 1002 | 
+Begin to build ORDER index of key : 
+0,3,2
+Total trace num is : 50000000
+Begin to read data...

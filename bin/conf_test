@@ -1,0 +1,6 @@
+DataOrder=CMP_LINE,CMP,TRACE
+ShotNum=500
+TraceNumPerShot=10000
+CMPLineNum=10
+CMPNum=50
+TraceNumPerCMPLine=100

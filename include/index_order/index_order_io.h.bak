@@ -1,0 +1,63 @@
+/*
+ * IndexIO.h
+ *
+ *  Created on: Oct 14, 2016
+ *      Author: wyd
+ */
+
+#ifndef INDEX_ORDER_IO_H_
+#define INDEX_ORDER_IO_H_
+
+
+#include <stdint.h>
+#include <string>
+#include <vector>
+#include <map>
+
+#include "util/util_keyword.h"
+
+
+
+
+
+class IndexOrderIO {
+public:
+	IndexOrderIO();
+    ~IndexOrderIO();
+
+    static std::vector<int> FindIndex(const IndexAttr &index_attr);
+
+    static bool Valid(const IndexAttr &index_attr);
+#if 0
+    static bool ValidOrRemove(const IndexAttr &index_attr);
+    static bool InvalidateIndex(const SeisDataAttr &data_attr, int keycode);
+#endif
+    static void Remove(const IndexAttr &index_attr);
+
+protected:
+
+    IndexAttr index_attr_;
+
+    std::string index_dir_;
+
+    int real_key_num_;
+
+    int fd_key_first_, fd_key_oth_;
+
+    char *index_buf_, *record_p_;
+    char *key_first_buf_, *record_p_key_first_;
+
+    int one_index_size_;
+    int key_first_record_size_;
+
+
+public:
+    static std::string GetIndexRootDir();
+    static std::string GetIndexFullDir(const IndexAttr &index_attr);
+
+private:
+
+};
+
+
+#endif /* INDEX_ORDER_IO_H_ */

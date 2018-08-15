@@ -1,0 +1,274 @@
+/*
+ * IndexOrderIO.cpp
+ *
+ *  Created on: Oct 16, 2016
+ *      Author: zch
+ */
+
+#include "index_order/index_order_io.h"
+
+#include <stdlib.h>
+#include <unistd.h>
+#include <queue>
+#include <dirent.h>
+#include <string.h>
+#include <fcntl.h>
+#include <stdio.h>
+#include <sys/stat.h>
+
+#include "job_para.h"
+#include "util/util.h"
+#include "util/util_string.h"
+#include "util/util_io.h"
+
+
+IndexOrderIO::IndexOrderIO() {
+
+}
+
+IndexOrderIO::~IndexOrderIO() {
+
+}
+
+std::string IndexOrderIO::GetIndexRootDir() {
+
+	std::string data_dir = JobPara::GetPara("DataDir");
+	std::string trace_num = JobPara::GetPara("TraceNum");
+	std::string index_root_dir = data_dir + "/index/order_index/" + trace_num;
+
+	return index_root_dir;
+}
+
+std::string IndexOrderIO::GetIndexFullDir(const IndexAttr &index_attr) {
+	std::string index_dir = GetIndexRootDir();
+
+//	std::vector<int> key_ncode_arr = index_attr.keycode_arr;
+	for(int i = 0; i < index_attr.keypos_arr.size(); ++i) {
+		index_dir += "/" + ToString(index_attr.keypos_arr[i]);
+		if(!KeyWordHelper::IsKeyWordAsc(i)) {
+			index_dir += "_d";
+		}
+	}
+
+	return index_dir;
+}
+
+typedef std::vector<std::string>  DirSuffix;
+
+std::string GetFullDirPath(const std::string &index_dir, const DirSuffix &suffix) {
+	std::string ret_path = index_dir;
+	for(int i = 0; i < suffix.size(); ++i) {
+		ret_path += "/" + suffix[i];
+	}
+
+	return ret_path;
+}
+
+std::vector<int> GetIndexKeyCodeArr(const std::vector<int> &required_keycode_arr, const DirSuffix &suffix) {
+	std::vector<int> ret_arr = required_keycode_arr;
+	for(int i = 0; i < suffix.size(); ++i) {
+		ret_arr.push_back(ToInt(suffix[i]));
+	}
+	return ret_arr;
+}
+
+
+std::vector<int> IndexOrderIO::FindIndex(const IndexAttr &index_attr) {
+	std::vector<int> null_ret;
+	std::string index_dir = GetIndexRootDir();
+
+	for(int i = 0; i < index_attr.keypos_arr.size(); ++i) {
+		index_dir += "/" + ToString(index_attr.keypos_arr[i]);
+		if(!KeyWordHelper::IsKeyWordAsc(i)) {
+			index_dir += "_d";
+		}
+//		std::string invalid_flag_name = index_dir + "/index.invalid";
+//		int iRet = access(invalid_flag_name.c_str(), F_OK);
+//		if(0 == iRet) {
+//			return null_ret;
+//		}
+	}
+
+	std::string meta_name = index_dir + "/index.meta";
+	int iRet = access(meta_name.c_str(), F_OK | R_OK);
+	if(0 == iRet) {
+		return index_attr.keypos_arr;
+	} else {
+		std::queue<DirSuffix> search_queue;
+		DirSuffix empty_suf;
+		search_queue.push(empty_suf);
+
+		while(!search_queue.empty()) {
+			DirSuffix cur_suffix = search_queue.front();
+			search_queue.pop();
+			std::string dir_path = GetFullDirPath(index_dir, cur_suffix);
+
+			DIR *pdir = opendir(dir_path.c_str());
+			if(NULL == pdir) {
+				return null_ret;
+			}
+
+			dirent entry;
+			dirent *result;
+			int dret;
+
+			printf("dir_path = %s\n", dir_path.c_str());
+			for(dret = readdir_r(pdir, &entry, &result);
+					result != NULL && dret ==0;
+					dret = readdir_r(pdir, &entry, &result)) {
+
+				if(strcmp(entry.d_name, ".") == 0
+						|| strcmp(entry.d_name, "..") == 0)
+					continue;
+
+
+				printf("entry is : %s\n", entry.d_name);
+
+				std::string full_entry_path = dir_path + "/" + entry.d_name;
+
+				struct stat statBuf;
+				int sret = stat (full_entry_path.c_str(), &statBuf);
+				if(sret < 0) {
+					closedir(pdir);
+					return null_ret;
+				}
+				if(S_ISDIR(statBuf.st_mode)) {
+
+//					std::string invalid_flag_name = dir_path + "/index.invalid";
+//					if(0 == access(invalid_flag_name.c_str(), F_OK)) {
+//						continue;
+//					}
+					meta_name = dir_path + "/" + entry.d_name + "/index.meta";
+					printf("meta_name = %s\n", meta_name.c_str());fflush(stdout);
+					if(0 == access(meta_name.c_str(), F_OK | R_OK)) {
+						closedir(pdir);
+						cur_suffix.push_back(entry.d_name);
+						return GetIndexKeyCodeArr(index_attr.keypos_arr, cur_suffix);
+					} else {
+						DirSuffix new_suffix = cur_suffix;
+						new_suffix.push_back(entry.d_name);
+						search_queue.push(new_suffix);
+					}
+
+				}
+			}
+			closedir(pdir);
+		} //while queue
+
+		return null_ret;
+	} // else
+}
+
+bool IndexOrderIO::Valid(const IndexAttr &index_attr) {
+
+	std::string index_dir = GetIndexRootDir();
+
+	for(int i = 0; i < index_attr.keypos_arr.size(); ++i) {
+		index_dir += "/" + ToString(index_attr.keypos_arr[i]);
+		if(!KeyWordHelper::IsKeyWordAsc(i)) {
+			index_dir += "_d";
+		}
+	}
+
+	std::string meta_name = index_dir + "/index.meta";
+	int iRet = access(meta_name.c_str(), F_OK | R_OK);
+	if(0 > iRet) { // access meta error
+		return false;
+	} else {
+		return true;
+	}
+}
+
+#if 0
+bool IndexOrderIO::InvalidateIndex(const SeisDataAttr &data_attr, int keycode) {
+	std::string index_root_data = GetIndexRootDir(data_attr);
+	std::string keycode_str = ToString(keycode);
+
+	std::queue<DirSuffix> search_queue;
+	DirSuffix empty_suf;
+	search_queue.push(empty_suf);
+
+	while(!search_queue.empty()) {
+		DirSuffix cur_suffix = search_queue.front();
+		search_queue.pop();
+		std::string dir_path = GetFullDirPath(index_root_data, cur_suffix);
+
+		DIR *pdir = opendir(dir_path.c_str());
+		if(NULL == pdir) {
+			return false;
+		}
+
+		dirent entry;
+		dirent *result;
+		int dret;
+
+		for(dret = readdir_r(pdir, &entry, &result);
+				result != NULL && dret ==0;
+				dret = readdir_r(pdir, &entry, &result)) { //iterate in one dir
+
+			if(strcmp(entry.d_name, ".") == 0
+					|| strcmp(entry.d_name, "..") == 0)
+				continue;
+
+
+			std::string full_entry_path = dir_path + "/" + entry.d_name;
+
+			struct stat statBuf;
+			int sret = stat (full_entry_path.c_str(), &statBuf);
+			if(sret < 0) {
+				closedir(pdir);
+				return false;
+			}
+			if(S_ISDIR(statBuf.st_mode)) {
+				if(keycode_str == entry.d_name) {
+					std::string invalid_flag_name = dir_path + "/" + entry.d_name + "/index.invalid";
+					int fd = creat(invalid_flag_name.c_str(), 0755);
+					if(0 > fd) {
+						printf("create invalid flag error\n");
+						closedir(pdir);
+						return false;
+					}
+				} else {
+//					printf("push new entry : %s\n", entry.d_name);fflush(stdout);
+					DirSuffix new_suffix = cur_suffix;
+					new_suffix.push_back(entry.d_name);
+					search_queue.push(new_suffix);
+				}
+			}// is a dir
+		}
+		closedir(pdir);
+	}
+	return true;
+}
+
+
+
+bool IndexOrderIO::ValidOrRemove(const IndexAttr &index_attr) {
+	std::string index_dir = GetIndexRootDir(index_attr.data_attr);
+
+	for(int i = 0; i < index_attr.keycode_arr.size(); ++i) {
+		index_dir += "/" + ToString(index_attr.keycode_arr[i]);
+		std::string invalid_flag_name = index_dir + "/index.invalid";
+		int iRet = access(invalid_flag_name.c_str(), F_OK);
+		if(0 == iRet) {
+			RecursiveRemove(index_dir);
+			return false;
+		}
+	}
+
+
+	std::string meta_name = index_dir + "/index.meta";
+	int iRet = access(meta_name.c_str(), F_OK | R_OK);
+	if(0 > iRet) { // access meta error
+		return false;
+	} else {
+		return true;
+	}
+}
+#endif
+
+void IndexOrderIO::Remove(const IndexAttr &index_attr) {
+	std::string index_dir = GetIndexFullDir(index_attr);
+	RecursiveRemove(index_dir);
+}
+

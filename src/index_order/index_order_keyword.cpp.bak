@@ -1,0 +1,86 @@
+/*
+ * util_keyword.cpp
+ *
+ *  Created on: Aug 25, 2016
+ *      Author: wzb
+ */
+
+
+#include "index_order/index_order_keyword.h"
+
+#include <functional>
+#include <algorithm>
+
+#include "util/util_string.h"
+#include "index_config.h"
+
+
+#if 0
+void IndexOrderKeyWord::SetKeyWord(const IndexAttr &index_attr) {
+
+#if 0
+    std::vector<std::string> keyword_arr = SplitString(keywords, ",");
+
+    std::transform(keyword_arr.begin(), keyword_arr.end(),
+            std::inserter(pos_arr_, pos_arr_.end()), TransToPos);
+
+    for(int i = 0; i < keyword_arr.size(); ++i) {
+    	if(EndsWith(keyword_arr[i], "_d")) {
+    		order_arr_.push_back(false);
+    	} else {
+    		order_arr_.push_back(true);
+    	}
+    }
+#endif
+    pos_arr_ = index_attr.keypos_arr;
+    asc_arr_ = index_attr.asc_arr_;
+}
+
+
+int IndexOrderKeyWord::TransToPos(std::string keyword_name) {
+	if(EndsWith(keyword_name, "_d")) {
+		keyword_name = keyword_name.substr(0, keyword_name.size() - 2);
+	}
+
+	return ToInt(keyword_name);
+}
+
+bool IndexOrderKeyWord::TransToOrder(std::string keyword_name) {
+	return (!EndsWith(keyword_name, "_d"));
+}
+#endif
+
+
+#if 0
+int IndexOrderKeyWord::KeyWordCompare(const std::vector<int> &key1_arr, const std::vector<int> &key2_arr) {
+
+    int iRet = 0;
+    int key_num = key1_arr.size();
+    for(int i = 0; i < key_num; ++i) {
+
+        if(key1_arr[i] == key2_arr[i])
+        	continue;
+
+        int key_id = pos_arr_[i];
+        bool is_asc = IsKeyWordAsc(i);
+
+        if(!IsFloatKey(key_id))
+        {
+            return ((key1_arr[i] < key2_arr[i])^is_asc) ? 1 : -1;
+        } else {
+            float &key1_float = *((float*)(&(key1_arr[i])));
+            float &key2_float = *((float*)(&(key2_arr[i])));
+            return ((key1_float < key2_float)^is_asc) ? 1 : -1;
+        }
+    }
+    return iRet;
+}
+#endif
+
+
+#if 0
+
+std::vector<int> IndexOrderKeyWord::pos_arr_;
+std::vector<bool> IndexOrderKeyWord::asc_arr_;
+#endif
+

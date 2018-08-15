@@ -1,0 +1,22 @@
+start_value = 402, ele_find = 402, ele_before = 401, ele_after = 403
+Search BTree of level : 3, tree_begin_off = 466931712, key_id = 3, rule[0].key_id = 3, start = 13, end = 93
+index_level : 3, extra_root = 0, tier_num = 2, begin_id_off = 151996000, trace_id_num = 500
+file : index_btree/index_btree_reader.cpp, line : 336
+file : index_btree/index_btree_reader.cpp, line : 339
+file : index_btree/index_btree_reader.cpp, line : 342
+file : index_btree/index_btree_reader.cpp, line : 348
+file : index_btree/index_btree_reader.cpp, line : 350
+file : index_btree/index_btree_reader.cpp, line : 352
+tier_i = 0, ele_num = 2, ele_size = 4, search_p = 0, start_p = 13
+After search, id_in_block = 0
+tier_i = 1, block_id = 0, id_in_block = 0, block_begin_off = 466935808
+file : index_btree/index_btree_reader.cpp, line : 331
+file : index_btree/index_btree_reader.cpp, line : 333
+file : index_btree/index_btree_reader.cpp, line : 336
+file : index_btree/index_btree_reader.cpp, line : 339
+file : index_btree/index_btree_reader.cpp, line : 342
+file : index_btree/index_btree_reader.cpp, line : 348
+file : index_btree/index_btree_reader.cpp, line : 350
+file : index_btree/index_btree_reader.cpp, line : 352
+tier_i = 1, ele_num = 257294336, ele_size = 12, search_p = 9, start_p = 13
+

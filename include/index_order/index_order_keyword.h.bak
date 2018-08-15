@@ -1,0 +1,51 @@
+/*
+ * util_keyword.h
+ *
+ *  Created on: Aug 25, 2016
+ *      Author: wzb
+ */
+
+#ifndef UTIL_KEYWORD_H_
+#define UTIL_KEYWORD_H_
+
+#include <string>
+#include <vector>
+
+struct IndexAttr;
+
+class IndexOrderKeyWord {
+public:
+
+#if 0
+	static void SetKeyWord(const IndexAttr &index_attr);
+	static inline int GetKeyWordPos(int key_i) {
+	    return pos_arr_[key_i];
+	}
+	static inline bool IsKeyWordAsc(int key_i) {
+		return asc_arr_[key_i];
+	}
+	static inline std::vector<int> &GetPosArr() {
+	    return pos_arr_;
+	}
+	static inline int GetKeyNum() {
+		return pos_arr_.size();
+	}
+#endif
+
+#if 0
+	static int KeyWordCompare(const std::vector<int> &key1_arr, const std::vector<int> &key2_arr);
+#endif
+
+private:
+#if 0
+	static int TransToPos(std::string keyword_name);
+	static bool TransToOrder(std::string keyword_name);
+
+	static std::vector<int> pos_arr_;
+	static std::vector<bool> asc_arr_;
+#endif
+
+};
+
+
+#endif /* UTIL_KEYWORD_H_ */
